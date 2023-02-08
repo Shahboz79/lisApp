@@ -1,0 +1,58 @@
+HOST = http://lissoft.uz:8095
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+----- AUTHORIZATION -----
+HOST/api/user/login, mthod: POST
+Params: {
+	"userName": "admin",
+	"password": "1234567"
+}
+Bu APIda Bearer token qaytariladi. Tokenni har bir zaprosda headerda yuborish kerak bo`ladi. Token expire date  = 1hour
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+#1 Add appointment: method = POST, description: Bu API tehnomedda yangi patsient laboratoriya analiz topshirishga kelganda ishlatiladi
+
+URL: HOST/api/appointment/add
+Params: {
+	"appointmentId": 456456456, //Tehnomeddagi qabul ID si
+    "clinic": {
+		"id": 1 //Klinika ID si (tehnomeddagi)
+	},
+    "patient": {
+		"id": 2, //tehnomeddagi patsient ID si
+		"lastName": "Aliev",
+		"firstName": "Vali",
+		"middleName": "Anvarovich",
+		"phoneNumber": "998971234567", //12ta belgi, "+" begisini ishlatilmaydi
+		"birthDate": "2001-12-05", //Date formatda
+		"passportNumber": "AA1234567",
+		"gender": {
+			"id": 1 //1-Erkak, 2-Ayol
+		}
+	},
+    "items": [
+		{
+			"analyze": {
+				"id": 1, //tehnomeddagi analizni IDsi
+				"name": "ALT" //tehnomeddagi analizni nomi
+			}
+		},
+		{
+			"analyze": {
+				"id": 2, //tehnomeddagi analizni IDsi
+				"name": "AST" //tehnomeddagi analizni nomi
+				"result":
+			}
+		}
+	]
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+#2 Get analyzes result: method = GET, description: Bu API patsientni laboratoriya analizlari javobini LISdan olish uchun ishlatiladi
+
+HOST/api/appointment/analyze/result/get
+Params: Long appointmentId //tehnomeddagi patsient qabuli ID si

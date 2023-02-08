@@ -1,0 +1,553 @@
+*{
+    padding: 0;
+    margin: 0;
+    width: auto;
+
+
+}
+
+.bg-light {
+    background: rgb(0,212,255);
+    background: linear-gradient(0deg, rgba(0,212,255,1) 0%, rgba(75,190,246,1) 50%, rgba(0,212,255,1) 100%);
+}
+
+.container-fluid .loginPage {
+    background-image: url("./../images/LoginBackgraund.jpg");
+    height: calc(100vh - 55px);
+    width: 100%;
+    /*height: auto;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.container .loginBack {
+    position: absolute;
+}
+
+.container-fluid .text-center {
+    position: fixed;
+
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: 0 auto;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.7);
+
+}
+
+.form-signin img {
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-control {
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 7px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-signin .btn {
+    color: white;
+    background-color: #252E6A;
+
+}
+
+.form-signin .btn:hover {
+    color: white;
+    background-color: #013ed4;
+}
+
+.footer {
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f0f8ff;
+    opacity: .5;
+}
+
+fieldset {
+    border: 1px solid #ced4da !important;
+    padding: 1rem !important;
+    border-radius: 5px;
+}
+
+legend {
+    width: auto !important;
+    margin-left: 1rem;
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+}
+
+.react-responsive-modal-modal {
+    max-width: 800px;
+    min-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    padding: 1.2rem;
+    background: #ffffff;
+    background-clip: padding-box;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+}
+
+/*Menu styles*/
+
+h1, h2, p, ul, li {
+    font-family: sans-serif;
+}
+
+ul.header li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+}
+
+ul.header {
+    background-color: #0d47a1;
+    margin: 0;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(13, 71, 161, 0.7) !important;
+    padding: 0;
+}
+
+ul.header li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+}
+
+ul.header li span {
+    font-weight: bold;
+    padding: 15px;
+    float: right !important;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+ul.header li a.active {
+    color: #0d47a1;
+    background-color: #ffffff;
+}
+
+.content {
+    /*height: calc(100vh - 54px);*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*background-size: cover;*/
+    /*background: #fff url("../images/medicaldocment.jpg") no-repeat top center;*/
+    z-index: 1;
+}
+
+.content h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.content li {
+    margin-bottom: 10px;
+
+}
+
+/*.card {
+    height: calc(100vh - 80px);
+}*/
+
+#searchBox {
+    border-color: #17a2b8;
+}
+
+.auto-margin {
+    margin: auto;
+}
+
+#treatmentTable {
+    border-radius: 7px;
+}
+
+#treatmentTable tr th, tr td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#medEquipmentTable tr th, tr td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#noBorder tr td {
+    border: none;
+}
+
+.linkStyle {
+    text-decoration: underline;
+    color: #00BFFF;
+    cursor: pointer;
+}
+
+table#somatoType tr td {
+    border: none;
+}
+
+.table-header {
+    padding: 10px;
+    font-weight: bold;
+    height: 30px;
+}
+
+table#adminReport1 tr td, table#adminReport2 tr td, table#adminReport3 tr td, table#adminReport4 tr td, table#adminReport5 tr td, table#adminReport6 tr td {
+    padding: 5px;
+    table-layout: fixed;
+    text-align: center;
+}
+
+.verticalTableHeader {
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.verticalTableHeader:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.verticalTableHeader p {
+    margin: 0 -999px; /* virtually reduce space needed on width to very little */
+    display: inline-block;
+}
+
+.verticalTableHeader p:before {
+    content: '';
+    width: 0;
+    padding-top: 110%;
+    /* takes width as reference, + 10% for faking some extra padding */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.select-all .toggle {
+    margin-left: 7px;
+}
+
+.col-md-12 {
+    /*background-color:red ;*/
+}
+
+.table tr {
+    /*background-color:#6AAEE6 ;*/
+    background-color: white;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+    padding-left: 5px;
+    padding-top: 0;
+    padding-right: 5px;
+}
+
+.table th {
+    background-color: #268BE6;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table thead th {
+    background-color: #268BE6;
+    color: white;
+    text-align: center;
+    vertical-align: middle !important;
+    border: 1px solid black;
+}
+
+.table td {
+    padding: .5rem !important;
+    vertical-align: middle !important;
+}
+
+table#listTable td:first-child, td:last-child {
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.accountantView .content {
+    height: calc(100vh - 54px);
+    background: url("../images/accountedBackgraund.jpg") no-repeat center;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    /*margin-bottom: 5%;*/
+
+}
+
+.ambulanceCall .content {
+    height: calc(100vh - 54px);
+    background: url("../images/ambulanceBackgraund.jpg") no-repeat center;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    /*margin-bottom: 5%;*/
+
+}
+
+.registration .content {
+    height: calc(100vh - 54px);
+    background: url("../images/listBackgraund.jpg") no-repeat center;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    /*margin-bottom: 5%;*/
+
+}
+
+.labaratory .content {
+    height: calc(100vh - 54px);
+    background: url("../images/labaratoryBackgraund.jpg") no-repeat center;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    /*margin-bottom: 5%;*/
+
+}
+
+.doctors .content {
+    height: calc(100vh - 54px);
+    background: url("../images/doctorsBackgraund.jpg") no-repeat center;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    /*margin-bottom: 5%;*/
+
+}
+
+.reports .content {
+    height: calc(100vh - 54px);
+    background: url("../images/reportsBackgraund.jpg") no-repeat center;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    /*margin-bottom: 5%;*/
+
+}
+
+.settings .content {
+    height: calc(100vh - 54px);
+    background-size: cover;
+    background: url("../images/settingBackgraund.jpg") no-repeat top center;
+    position: relative;
+    z-index: 1;
+    /*margin-bottom: 5%;*/
+
+}
+
+.reports table .table-header {
+    background-color: #268BE6;
+    color: white;
+
+}
+
+.reports table tr {
+    background-color: #268BE6;
+
+}
+
+.reports table tbody tr td {
+    color: black;
+    background-color: whitesmoke;
+}
+
+body .btnBlue {
+    padding: .3rem .75rem;
+    color: white;
+    background-color: #013ed4;
+}
+
+body .btnBlue:hover {
+    color: white;
+    background-color: #252E6A;
+    transform: translate(1.1, 1.1);
+}
+
+body .btnGreen {
+    color: white;
+    background-color: green;
+}
+
+body .btnGreen:hover {
+    color: white;
+    background-color: #267F05;
+    transform: translate(1.5, 1.5);
+}
+
+body .icon {
+    color: white;
+    background-color: #252E6A;
+
+}
+
+body .icon:hover {
+    color: white;
+    background-color: #013ed4;
+    transform: translate(1.1, 1.1);
+}
+
+.content .tableScroll {
+    overflow-y: auto;
+}
+
+.react-responsive-modal-root {
+    top: 60px !important;
+}
+
+.react-datepicker-wrapper {
+    display: block !important;
+    padding: 0;
+    border: 0;
+}
+
+.page-content {
+    height: calc(100vh - 55px);
+}
+
+.serviceWidget {
+    width: max-content;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    margin: 0 3px 3px 0;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.loaderBox {
+    width: 0;
+    position: absolute;
+    height: 0;
+    opacity: 0;
+    z-index: 1050;
+    top: 0;
+    left: 0;
+}
+
+.loader {
+    position: absolute;
+    top: calc(50% - 4em);
+    left: calc(50% - 4em);
+    width: 6em;
+    height: 6em;
+    border: 1.1em solid rgba(0, 0, 0, 0.2);
+    border-left: 1.1em solid #000000;
+    border-radius: 50%;
+    animation: load8 1.1s infinite linear;
+    transition: opacity 0.5s;
+}
+
+.loader--hide {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.loader--show {
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+}
+
+@keyframes load8 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.show-blur {
+    width: 100%;
+    height: 100vh;
+    filter: blur(2px);
+    opacity: 1;
+}
+
+.nav-item {
+    margin: 0 5px;
+    padding-right: 5px;
+    border-right-color: #ffffff;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+.nav-item:last-child {
+    margin: 0 5px;
+    border-right-color: transparent;
+    border-right-width: 0;
+}
+
+.nav-item a {
+    color: #ffffff;
+}

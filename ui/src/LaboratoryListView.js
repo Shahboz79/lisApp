@@ -1,0 +1,133 @@
+import React, {Component} from 'react';
+import axios from 'axios';
+import {apiHost, getKey, getUser, strings} from "./Utils";
+
+export default class LaboratoryListView extends Component {
+
+    constructor() {
+        super();
+        let screenHeight = window.screen.height;
+        this.state = {
+            searchKeyword: '',
+            laboratoryRows: [],
+            screenHeight1: screenHeight - 213,
+            screenHeight2: screenHeight - 300
+        };
+        this.search = this.search.bind(this);
+        this.onChangeValue = this.onChangeValue.bind(this);
+    }
+
+    openAddLabView(laboratory) {
+        window.open(window.location.protocol + '//' + window.location.host + "/addLabView?id=" + laboratory.id, '_self');
+    }
+
+    componentDidMount() {
+        this.getData();
+    }
+
+    getData() {
+        let user = getUser();
+        axios.get(apiHost + '/api/medService/list?organizationId='+user.clinic.id,
+            { headers: {Authorization: `Bearer ` + user.token} })
+            .then(result => {
+                let options = [];
+                if (result.status === 200) {
+                    for (let i = 0; i < result.data.result.length; i++) {
+                        let row = result.data.result[i];
+                        options.push(<tr key={getKey()}>
+                            <td>{i + 1}</td>
+                            <td className="linkStyle" onClick={this.openAddLabView.bind(this, row)}>{row.name}</td>
+                            <td>{row.code}</td>
+                        </tr>);
+                    }
+                }
+                this.setState({
+                    laboratoryRows: options
+                })
+            })
+    }
+
+    handleKeyDown = (event) => {
+        if (event.key === 'Enter' || event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("searchButton").click();
+        }
+    };
+
+    onChangeValue(e) {
+        this.setState({
+            searchKeyword: e.target.value
+        })
+    }
+
+    search() {
+        if (this.state.searchKeyword !== '') {
+            axios.get(apiHost + '/settings/laboratory/search?keyword=' + this.state.searchKeyword)
+                .then(result => {
+
+                    if (result.data.statusCode === 200) {
+                        let options = [];
+                        if (result.data.data !== null) {
+                            for (let i = 0; i < result.data.data.length; i++) {
+                                let row = result.data.data[i];
+                                options.push(<tr key={getKey()}>
+                                    <td>{i + 1}</td>
+                                    <td className="linkStyle" onClick={this.openAddLabView.bind(this, row)}>{row.type.name}</td>
+                                    <td>{row.price}</td>
+                                </tr>);
+                            }
+                        }
+                        this.setState({
+                            laboratoryRows: options
+                        })
+                    } else {
+                        this.setState({
+                            laboratoryRows: []
+                        })
+                    }
+                })
+        } else {
+            this.getData();
+        }
+    }
+
+    render() {
+        return (
+            <div className="labaratory">
+                <div className="content">
+                    <div className="container card card-body">
+                        <div className="form-row">
+                            <div className="col-md-6">
+                                <h3>{strings.listOfLaboratories}</h3>
+                            </div>
+                            <div className="col-md-6 text-right">
+                                <div className="input-group">
+                                    <input className="form-control" id="searchBox" placeholder={strings.searchKeyword} aria-label={strings.search} aria-describedby="basic-addon2" type="text" onChange={this.onChangeValue} onKeyDown={this.handleKeyDown}/>
+                                    <div className="input-group-append">
+                                        <button className="btn btnBlue" id="searchButton" onClick={this.search}>{strings.search}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="form-row">
+                            <div className="col-md-12 order-md-1 pt-2 tableScroll" style={{height: this.state.screenHeight2}}>
+                                <table id="listTable" className="table table-striped table-bordered shadow">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">{strings.cage}</th>
+                                        <th scope="col">{strings.name1}</th>
+                                        <th scope="col">{strings.price}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {this.state.laboratoryRows}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
